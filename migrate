@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+  
+set dest [lindex $argv 0]
+
+
+spawn scp -i id_geni_ssh_rsa /var/www/html/Video1.mp4 garrison@$dest:/var/www/html
+expect "passphrase"
+send "Hunter2019"
+send "\r"
+interact
+

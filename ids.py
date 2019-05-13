@@ -1,6 +1,6 @@
 import os
 import time
-import mig
+import mig_client
 
 def get_est_conn():
     path = "/users/garrison/est-att-conn.txt"
@@ -20,7 +20,7 @@ def listen():
         time.sleep(5)
 
 def defend_attack():
-    mig.migrate() 
+    mig_client.migrate() 
 
 def main():
     listen()
