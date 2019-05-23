@@ -9,3 +9,19 @@ send "Hunter2019"
 send "\r"
 interact
 
+spawn scp -i id_geni_ssh_rsa /users/garrison/attacker.txt garrison@192.170.230.112:/users/garrison/attacker.txt
+expect "passphrase"
+send "Hunter2019"
+send "\r"
+
+interact
+
+spawn scp -i id_geni_ssh_rsa /users/garrison/timestamp.txt garrison@192.170.230.112:/users/garrison/timestamp.txt
+expect "passphrase"
+send "Hunter2019"
+send "\r"
+
+interact
+
+
+
