@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title> System Admin Control</title>
+<style>
+    table {
+      margin-left: 15px;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    p {
+        margin-left: 15px;
+        font-family: sans-serif;
+    }
+    h2 {
+        margin-left: 5px;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: dimgrey;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 20px;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+    <h1>IDS</h1>
+    <p>System Status: {{ s_status }} </p>
+
+    <h2>Security</h2>
+    <p>Attack Located at IP : {{ attack_target_ip }} </p>
+    <p>Number of Connections : {{ n_connections }} </p>
+
+ 
+ <h1>Reactive Migration</h1>
+    <p>Migration Destination IP : {{ m_target_ip }} </p>
+    <p>Migration Start Time : {{ m_start_time }} </p>
+    <p>Migration End Time : {{ m_end_time }} </p>
+    <br>
+    <h2>Decoy Status</h2>
+    <table style="width:100%">
+      <tr>
+        <th>Decoy 1</th>
+        <th>Decoy 2</th>
+        <th>Decoy 3</th>
+      </tr>
+      <tr>
+        <td>CPU: {{ cpu_val_1 }}</td>
+        <td>CPU: {{ cpu_val_2 }}</td>
+        <td>CPU: {{ cpu_val_3 }}</td>
+      </tr>
+      <tr>
+        <td>CPU core: {{ n_core_1 }}</td>
+        <td>CPU core: {{ n_core_2 }}</td>
+        <td>CPU core: {{ n_core_3 }}</td>
+      </tr>
+      <tr>
+        <td>RAM: {{ ram_val_1 }}</td>
+        <td>RAM: {{ ram_val_2 }}</td>
+        <td>RAM: {{ ram_val_3 }}</td>
+      </tr>
+      <tr>
+        <td>Bandwidth: {{ bw_val_1 }}</td>
+        <td>Bandwidth: {{ bw_val_2 }}</td>
+        <td>Bandwidth: {{ bw_val_3 }}</td>
+      </tr>
+    </table>
+    <br>
+    <h1>False Reality</h1>
+    <p>Dummy Address : {{ dummy_ip }}</p>
+    <p>Dummy Traffic : {{ dummy_traffic }} </p>
+
+</body>
+</html>
+

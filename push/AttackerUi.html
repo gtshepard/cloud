@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> Attacker Admin Control</title>
+<style>
+    table {
+      margin-left: 15px;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    p {
+        margin-left: 15px;
+        font-family: sans-serif;
+    }
+    h2 {
+        margin-left: 5px;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: dimgrey;
+    }
+
+    h1 {
+        font-family: sans-serif;
+        font-size: 20px;
+        text-decoration: underline;
+    }
+</style>
+
+<script>function greeting(){document.write("hi");}</script>      
+<script>function maxed(){
+	//document.write("{{max_limit}}")
+	if("{{max_limit}}" == "True"){
+	alert("Max Intensity Reached");
+	}
+}</script>
+<script>function Stop(){
+	if("{{attack_intensity}}" == "0"){
+	alert("Attack Stopped");
+	}
+}</script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>	
+<title>Static Attacker UI</title>
+</head>
+<body>
+
+
+<h1>Attacker Control</h1>
+<p>Attacked Traffic: {{ server_ip }}</p>
+
+<form method="post" action="/attacker_UI">
+		<p>Attack Intensity: {{ attack_intensity }}</p>
+		<input type="submit" value="Increase" name="Increase-Attack" onclick="maxed()"/>
+        <input type="submit" value="Decrease" name="Decrease-Attack"  onclick="Stop()" />
+		<input type="submit" value="Stop" name="Stop-Attack" onclick="Stop()"/>
+</div>
+</form>
+		
+
+
+	
+ 
+<p>Server Status: {{ server_status }}</p>
+
+
+
+
+</body>
+</html>
